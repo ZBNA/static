@@ -10,7 +10,7 @@ gem 'sass-rails', "5.0.6"
 gem 'airbrake', github: 'alphagov/airbrake', branch: 'silence-dep-warnings-for-rails-5'
 gem 'nokogiri', "~> 1.7"
 gem 'redis', "~> 3.3.3"
-gem 'govuk_publishing_components', '~> 1.1.0', require: ENV['RAILS_ENV'] != "production" || ENV['HEROKU_APP_NAME'].to_s.length.positive?
+gem 'govuk_publishing_components', '~> 1.2.0', require: ENV['RAILS_ENV'] != "production" || ENV['HEROKU_APP_NAME'].to_s.length.positive?
 
 group :development do
   gem 'image_optim', '0.17.1'
@@ -24,6 +24,7 @@ group :test do
   gem 'mocha', '~> 1.1.0', require: false
   gem 'shoulda'
   gem 'webmock'
+  gem 'poltergeist'
   gem 'test-unit'
   gem 'minitest'
   gem 'minitest-capybara', '~> 0.7.2'

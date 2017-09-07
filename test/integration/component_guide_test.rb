@@ -18,9 +18,15 @@ GovukPublishingComponents::ApplicationController.include(GovukPublishingComponen
 
 class ComponentGuideTest < ActionDispatch::IntegrationTest
   include Slimmer::TestHelpers::GovukComponents
+  WebMock.disable_net_connect!(allow: /__identify__/)
 
   def setup
+    Capybara.current_driver = Capybara.javascript_driver
     stub_shared_component_locales
+  end
+
+  def teardown
+    Capybara.use_default_driver
   end
 
   context "component guide" do
